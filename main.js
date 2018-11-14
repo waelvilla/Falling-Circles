@@ -28,12 +28,6 @@ let drawShapes=()=>{
 	//main canvas
 	drawCanvas('firebrick')
 
-	// drawRect(250,50,5,20,'white')
-	// drawRect(400,50,5,20,'white')
-
-
-	// drawRect(450,150,5,20,'white')
-	// drawRect(400,50,5,20,'white')
 
 	//pad
 	drawRect(canvas.width/2-200,canvas.height-20,200,20,'white')
@@ -41,14 +35,13 @@ let drawShapes=()=>{
 }
 
 
-// let update=()=>{
-// 	drawCanvas('black')
-// }
 
 
 
 
-//helper methods
+
+///////////helper methods///////////////
+
 let drawRect=(topx,topy,width,height,color)=>{
 	canvasContext.fillStyle=color
 	canvasContext.fillRect(topx,topy,width,height)
@@ -68,11 +61,4 @@ let drawText=(text,x,y,color)=>{
 	canvasContext.font="40px fantasy"
 	canvasContext.fillText(text,x,y)
 }
-
-let moveBall=()=>{
-
-}
-let r=new Rect()
-///////////////////////shapes /////////////////////
-// topx,topy,width,height,color
 
