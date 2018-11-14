@@ -9,6 +9,13 @@ window.onload=()=>{
 	ballMaker.makeBalls(10,'white')
 	let stickMaker=new StickMaker()
 	stickMaker.makeSticks(5,'white')
+	 
+	 canvas.addEventListener('mousemove',(evt)=>{
+ 		let mousePos=calculateMousePoisition(evt)
+	 	padX=mousePos.x
+	 })
+
+
 	setInterval(()=>{
 		//main functions
 		drawShapes()
@@ -29,9 +36,21 @@ let drawShapes=()=>{
 	drawCanvas('firebrick')
 
 
-	//pad
-	drawRect(canvas.width/2-200,canvas.height-20,200,20,'white')
+	//pad canvas.width/2-200
+	
+	drawRect(padX,canvas.height-20,200,20,'white')
 
+}
+
+let calculateMousePoisition=(evt)=>{
+	let rect=canvas.getBoundingClientRect();
+	let root=document.documentElement;
+	let mouseX=evt.clientX - rect.left - root.scrollLeft
+	let mouseY= evt.clientY - rect.top - root.scrollTop
+	return{
+		x: mouseX,
+		y: mouseY
+	}
 }
 
 
