@@ -1,12 +1,10 @@
-let pi=Math.PI, fps=30
-
 
 const canvas=document.getElementById('game')
 const canvasContext=canvas.getContext("2d")
-
+let pi=Math.PI, fps=30, padX=canvas.width/2
 window.onload=()=>{
 	let ballMaker=new BallMaker()
-	ballMaker.makeBalls(10,'white')
+	ballMaker.makeBalls(3,'white')
 	let stickMaker=new StickMaker()
 	stickMaker.makeSticks(5,'white')
 	 
@@ -15,9 +13,13 @@ window.onload=()=>{
 	 	padX=mousePos.x
 	 })
 
-
+	 setInterval(()=>{
+		ballMaker.makeBalls(3,'white')
+		stickMaker.makeSticks(5,'white')
+	 },2000)
 	setInterval(()=>{
 		//main functions
+
 		drawShapes()
 		ballMaker.drawAll()
 		ballMaker.moveBalls()
@@ -25,6 +27,7 @@ window.onload=()=>{
 		stickMaker.moveSticks()
 	}, 1000/fps)
 }
+
 
 //main methods
 let drawCanvas=(color)=>{
