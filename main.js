@@ -1,21 +1,23 @@
 
 const canvas=document.getElementById('game')
 const canvasContext=canvas.getContext("2d")
-let pi=Math.PI, fps=30, padX=canvas.width/2
+let pi=Math.PI, fps=30, padX=canvas.width/2, padY=canvas.height-20
+
 window.onload=()=>{
 	let ballMaker=new BallMaker()
-	ballMaker.makeBalls(3,'white')
+	ballMaker.makeBalls(1,'white')
 	let stickMaker=new StickMaker()
-	stickMaker.makeSticks(5,'white')
-	 
+	stickMaker.makeSticks(1,'white')
+	let pad=new Pad(padX,padY,'white')
+
 	 canvas.addEventListener('mousemove',(evt)=>{
  		let mousePos=calculateMousePoisition(evt)
 	 	padX=mousePos.x
 	 })
 
 	 setInterval(()=>{
-		ballMaker.makeBalls(3,'white')
-		stickMaker.makeSticks(5,'white')
+		ballMaker.makeBalls(1,'white')
+		stickMaker.makeSticks(1,'white')
 	 },2000)
 	setInterval(()=>{
 		//main functions
@@ -25,6 +27,10 @@ window.onload=()=>{
 		ballMaker.moveBalls()
 		stickMaker.drawAll()
 		stickMaker.moveSticks()
+		ballMaker.collisionCheck(pad.y)
+		stickMaker.collisionCheck()
+		pad.draw(padX)
+
 	}, 1000/fps)
 }
 
@@ -38,10 +44,8 @@ let drawShapes=()=>{
 	//main canvas
 	drawCanvas('firebrick')
 
-
-	//pad canvas.width/2-200
-	
-	drawRect(padX,canvas.height-20,200,20,'white')
+	//pad 
+	// drawRect(padX,canvas.height-20,200,20,'white')
 
 }
 
