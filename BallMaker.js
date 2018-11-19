@@ -16,10 +16,9 @@ class BallMaker {
 
 	}
 	makeBalls(count,color){
-		const y=10
+		const y=(-1)*(Math.floor(Math.random()*30))
 		while(count>0){
 			let x=Math.floor(Math.random()*canvas.width)
-			// this.drawBall(x,y,color)
 			this.balls.push({x,y,color})
 			count--
 		}
