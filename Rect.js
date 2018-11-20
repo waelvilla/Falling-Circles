@@ -7,6 +7,7 @@ class Rect {
 		this.color=color
 	}
 	draw(topx=this.x,topy=this.y,width=this.w,height=this.h,color=this.color){
+		this.x=topx
 		canvasContext.fillStyle=color
 		canvasContext.fillRect(topx,topy,width,height)
 		
