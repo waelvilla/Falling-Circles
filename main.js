@@ -102,14 +102,14 @@ let drawCircle=(centerX,centerY, radius, color)=>{
 	canvasContext.fill()
 }
 
-let drawText=(text,x,y,color)=>{
+let drawText=(text,x,y,color,font="20px fantasy")=>{
 	canvasContext.fillStyle=color
-	canvasContext.font="20px fantasy"
+	canvasContext.font=font
 	canvasContext.fillText(text,x,y)
 }
 
 let reset=()=>{
 	gameRunning=false
-	ballMaker.balls=[]
-	stickMaker.sticks=[]
+	drawText("Press Enter to restart", (canvas.width/2)-200,canvas.height/2, 'white', "50px fantasy")
+
 }

@@ -45,6 +45,12 @@ class BallMaker {
 
 
 	}
+
+	resetBalls(){
+			this.balls=[]
+		}
+	
+
 	collisionCheck(pad){
 		
 		for (var i in this.balls){
@@ -62,11 +68,14 @@ class BallMaker {
 					console.log("missed "+i);
 					ball.y=-100
 					this.missed++
-					if(this.missed=1){
-						alert("you lost")
+					if(this.missed==5){
+						
+						alert(`you lost! \nCought: ${this.caught} \nMissed: ${this.missed}`)
 						this.missed=0
+						this.caught=0
+						this.resetBalls()
 						reset()
-
+						
 					}
 				}
 
