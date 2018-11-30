@@ -4,6 +4,25 @@ const canvasContext=canvas.getContext("2d")
 let pi=Math.PI, fps=30, padX=canvas.width/2, padY=canvas.height-20, gameRunning=true
 
 window.onload=()=>{
+	let level=document.getElementById('level')
+	level.addEventListener('change',function() {
+		if(this.value==0)
+			ballMaker.speedY=5
+		if(this.value==1)
+			ballMaker.speedY=10
+		if(this.value==2)
+			ballMaker.speedY=15
+
+        })
+	let padSize=document.getElementById('padsize')
+	padSize.addEventListener('change',function(){
+		if(this.value==0)
+			pad.w=150
+		if(this.value==1)
+			pad.w=200
+		if(this.value==2)
+			pad.w=300
+	})
 	let ballMaker=new BallMaker()
 	ballMaker.makeBalls(1,'white')
 	let stickMaker=new StickMaker()

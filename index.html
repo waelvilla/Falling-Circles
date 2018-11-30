@@ -2,8 +2,26 @@
 <html>
 <head>
 	<title>pong</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<label for="level">Level: </label>
+<select name="level" id="level">
+	<option value="0">Easy</option>
+	<option value="1">Medium</option>
+	<option value="2">Difficult</option>
+</select>
+<div class="padsize">
+	<label for="padsize">Pad Size: </label>
+<select name="padsize" id="padsize">
+	<option value="0">Small</option>
+	<option value="1" selected>Normal</option>
+	<option value="2">Large</option>
+</select>
+</div>
+
+<br>
 <canvas id="game" width="800" height="600"></canvas>
 <script src="Rect.js"></script>
 <script src="Pad.js"></script>

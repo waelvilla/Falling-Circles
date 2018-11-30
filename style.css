@@ -1,0 +1,9 @@
+#level{
+	display: inline-block;
+	font-size: 16px;
+}
+.padsize{
+	font-size: 16px;
+	display: inline;
+	margin-left: 540px;
+}

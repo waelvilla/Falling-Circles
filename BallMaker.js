@@ -6,6 +6,9 @@ class BallMaker {
 		this.speedX=0
 		this.speedY=5
 		}
+	setSpeed(speed){
+		this.speedY=speed
+	}
 	drawBall(x,y,color){
 		// console.log(`---im drawing a circle with ${x} ,${y} colored ${color}`)
 		drawCircle(x,y,5,color)
