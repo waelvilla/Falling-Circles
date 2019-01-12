@@ -2,7 +2,7 @@
 const canvas=document.getElementById('game')
 const canvasContext=canvas.getContext("2d")
 let pi=Math.PI, fps=30, padX=canvas.width/2, padY=canvas.height-20, gameRunning=true
-
+let BackgroundColor='pink'
 window.onload=()=>{
 	let level=document.getElementById('level')
 	level.addEventListener('change',function() {
@@ -82,7 +82,7 @@ let drawCanvas=(color)=>{
 
 let drawShapes=()=>{
 	//main canvas
-	drawCanvas('firebrick')
+	drawCanvas(BackgroundColor)
 
 	//pad 
 
